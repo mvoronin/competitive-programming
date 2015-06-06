@@ -1,3 +1,9 @@
+#!/bin/python
+# -*- coding: utf-8 -*-
+
+import sys
+import os
+
 def get_chain_num(ss, w, acc):
     for s in ss[w]:
         return get_chain_num(ss, s, acc=acc+1)
@@ -32,3 +38,5 @@ def longest_chain(ws):
         if acc > max_acc:
             max_acc = acc
     return max_acc
+
+print longest_chain(['a', 'b', 'bc', 'bca', 'bda', 'bdca'])  # 4
