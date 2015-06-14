@@ -4,8 +4,8 @@
 
 def solution(n, rs, cs):
     for i in xrange(1, n):
-        if rs[i-1] > rs[i]:  # предыдущий элемент больше чем текущий
-            if cs[i-1] <= cs[i]:  # у предыдущего конфет меньше или равно, чем у текущего
+        if rs[i-1] > rs[i]:  # previous is bigger than current
+            if cs[i-1] <= cs[i]:  # previous has less or equal candies than current
                 cs[i-1] = cs[i] + 1
 
                 j = i-1
@@ -13,7 +13,7 @@ def solution(n, rs, cs):
                     cs[j-1] = cs[j] + 1
                     j -= 1
 
-        elif rs[i-1] < rs[i]:  # предыдущий элемент меньше чем текущий
+        elif rs[i-1] < rs[i]:  # previous is less than current
             cs[i] = cs[i-1] + 1
 
         i += 1
